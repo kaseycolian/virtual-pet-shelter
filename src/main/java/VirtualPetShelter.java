@@ -6,20 +6,17 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class VirtualPetShelter {
 
-
 	private Map<String, String> animals = new HashMap<String, String>();
-	 public Set<String> animalName = animals.keySet();
-	 
-	 public void add(String key, String VirtualPet) {
-//		animals.put(animal.getUserEnteredNameOfPet(), animal);
-		 animals.put(key, VirtualPet);
-	 }
-		 
+	public Set<String> nameOfPet = animals.keySet();
+
+	// public void add(String key, String VirtualPet) {
+	//// animals.put(animal.getUserEnteredNameOfPet(), animal);
+	// animals.put(key, VirtualPet);
+	// }
+
 	public Collection<String> animals() {
 		return animals.values();
 	}
-
-	
 
 	public void adopt(String userEnteredNameOfPet) {// If end up assigning a unique code for each animal, will need to
 													// change key variable.
@@ -79,35 +76,35 @@ public class VirtualPetShelter {
 		}
 	}
 
-//	public void tickEffectForAll() {
-//		if (animals.get(animals).getHungerLevel>=0 && animals.get(animals)getHungerLevel<=55) {
-//			animals.get(animals).getHungerLevel()+=4;
-//		}
-//		if (fireLevel >= 0 && fireLevel <= 55) {
-//			fireLevel =+ 4;
-//		}
-//		if (hungerLevel >= 0 && hungerLevel <= 55) {
-//			hungerLevel =+ 4;
-//		}
-//		if (thirstLevel >= 0 && thirstLevel <= 55) {
-//			thirstLevel = thirstLevel + 4;
-//		}if (boredomLevel >=0 && boredomLevel<=50) {
-//			boredomLevel += 4;
-//		} else if (fireLevel > 55 || hungerLevel > 55 || thirstLevel > 55 || boredomLevel > 55) {
-//			int randomEffect = ThreadLocalRandom.current().nextInt(1, 8);
-//			fireLevel += randomEffect;
-//			hungerLevel =+ randomEffect;
-//			thirstLevel =+ randomEffect;
-//			boredomLevel =+ randomEffect;
-//		}
-//}
-	
-	
-	
-	public void tickForAll(String nameOfPet, String hungerLevel, String thirstLevel, String fireLevel, String boredeomLevel) {
+	// public void tickEffectForAll() {
+	// if (animals.get(animals).getHungerLevel>=0 &&
+	// animals.get(animals)getHungerLevel<=55) {
+	// animals.get(animals).getHungerLevel()+=4;
+	// }
+	// if (fireLevel >= 0 && fireLevel <= 55) {
+	// fireLevel =+ 4;
+	// }
+	// if (hungerLevel >= 0 && hungerLevel <= 55) {
+	// hungerLevel =+ 4;
+	// }
+	// if (thirstLevel >= 0 && thirstLevel <= 55) {
+	// thirstLevel = thirstLevel + 4;
+	// }if (boredomLevel >=0 && boredomLevel<=50) {
+	// boredomLevel += 4;
+	// } else if (fireLevel > 55 || hungerLevel > 55 || thirstLevel > 55 ||
+	// boredomLevel > 55) {
+	// int randomEffect = ThreadLocalRandom.current().nextInt(1, 8);
+	// fireLevel += randomEffect;
+	// hungerLevel =+ randomEffect;
+	// thirstLevel =+ randomEffect;
+	// boredomLevel =+ randomEffect;
+	// }
+	// }
+
+	public void tickForAll(String nameOfPet, String hungerLevel, String thirstLevel, String fireLevel,
+			String boredeomLevel) {
 		VirtualPet animals = findAccount(accountNumber);
 		depositToAccount.deposit(amount);
 	}
-	
-	
+
 }
