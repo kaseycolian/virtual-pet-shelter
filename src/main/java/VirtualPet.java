@@ -6,31 +6,36 @@ public class VirtualPet {
 	// instance variables
 	private String nameOfPet;
 	private String typeOfPet;
-	// private boolean gameRunning; //only put in app, don't declare in shelter or virtualpet.
 	private int hungerLevel;
 	private int thirstLevel;
 	private int fireLevel;
 	private int boredomLevel;
 
-	public VirtualPet(String userEnteredNameOfPet, String typeOfPet) {// removed from constructor and entered into 2nd:
-																		// userEnteredNameOfPet int hungerLevel, int
-																		// thirstLevel, int fireLevel, int boredeomLevel
-		this.nameOfPet = userEnteredNameOfPet;// beginninngName
+	public VirtualPet(String nameOfPet, String typeOfPet) {
+		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;
+		this.hungerLevel = 50;
+		this.thirstLevel = 50;
+		this.fireLevel = 50;
+		this.boredomLevel = 50;
 
 	}
 
-	// Second constructor //switch to 0 default value for testing before adding random.  put note that test passed with 0 default(no random)
-	public VirtualPet(String userEnteredNameOfPet, String typeOfPet, int hungerLevel, int thirstLevel, int fireLevel,
+	public VirtualPet(String nameOfPet, String typeOfPet, int hungerLevel, int thirstLevel, int fireLevel,
 			int boredomLevel) {
-		this(userEnteredNameOfPet, typeOfPet);
-		this.hungerLevel = ThreadLocalRandom.current().nextInt(15, 45);
-		this.thirstLevel =ThreadLocalRandom.current().nextInt(20, 50);
-		this.fireLevel = ThreadLocalRandom.current().nextInt(10, 50);
-		this.boredomLevel = ThreadLocalRandom.current().nextInt(10, 50);
+		this(nameOfPet, typeOfPet);
+		this.hungerLevel = hungerLevel;
+		this.thirstLevel = thirstLevel;
+		this.fireLevel = fireLevel;
+		this.boredomLevel = boredomLevel;
 	}
 
-	public String getUserEnteredNameOfPet() {
+	public String getAllLevelsForIndividual() {
+		return "The current levels for " + nameOfPet + " are:\nHunger Level: " + hungerLevel + "\nThirst Level: "
+				+ thirstLevel + "\nFire Level:  " + fireLevel + "\nBoredom Level: " + boredomLevel;
+	}
+
+	public String getNameOfPet() {
 		return nameOfPet;
 	}
 
@@ -54,5 +59,40 @@ public class VirtualPet {
 		return boredomLevel;
 	}
 
+	public void playWithOne() {
+		int amountToPlay = 6;
+		boredomLevel -= amountToPlay;
+		int hungrier = 3;
+		hungerLevel -= hungrier;
+		int thirstier = 3;
+		thirstLevel -= thirstier;
+	}
+
+	public void feedOne() {
+		int amountToFeed = 5;
+		hungerLevel = -amountToFeed;
+		int thirstier = 2;
+		thirstLevel = -thirstier;
+		int fierier = 3;
+		fireLevel = -fierier;
+	}
+	public void tickEffectOne() {
+		int amountToFeed = 3;
+		hungerLevel =+3;
+		int thirstier = 3;
+		thirstLevel = -thirstier;
+		int fierier = 3;
+		fireLevel = +fierier;
+		int bored = 3;
+		boredomLevel =+3;
+		
+	}
+
+	// @Override
+	// public String toString() {
+	// return nameOfPet + " the " + typeOfPet + " currently is, hunger: " +
+	// hungerLevel + " thirst: " + thirstLevel
+	// + " fire: " + fireLevel + " boredom: " + boredomLevel;
+	// }
 
 }
