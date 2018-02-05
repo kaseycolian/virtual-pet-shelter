@@ -12,7 +12,7 @@ public class VirtualPet {
 	public VirtualPet(String nameOfPet, String typeOfPet) {
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;
-		this.hungerLevel = ThreadLocalRandom.current().nextInt(15, 45);//Switch to 50 for testing
+		this.hungerLevel = ThreadLocalRandom.current().nextInt(15, 45);// Switch to 50 for testing
 		this.thirstLevel = ThreadLocalRandom.current().nextInt(20, 50);
 		this.fireLevel = ThreadLocalRandom.current().nextInt(10, 50);
 		this.boredomLevel = ThreadLocalRandom.current().nextInt(20, 50);
@@ -98,6 +98,5 @@ public class VirtualPet {
 		thirstLevel = thirstLevel + 3;
 		fireLevel = fireLevel + 3;
 		boredomLevel = boredomLevel + 3;
-
 	}
 }
