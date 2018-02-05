@@ -82,7 +82,7 @@ class VirtualPetApp {
 				} else {
 					shelterApp.adopt(nameOfPetToAdopt);
 					System.out.println(nameOfPetToAdopt
-							+ " is off onto its journey to its new lands! Thank you finding a new castleland for our creature to call home!");
+							+ " is off onto its journey to its new lands! Thank you finding a new castleland for our creature to call home!s");
 				}
 				break;
 			case "6":
