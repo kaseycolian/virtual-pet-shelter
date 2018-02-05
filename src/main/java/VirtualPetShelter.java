@@ -61,8 +61,6 @@ public class VirtualPetShelter {
 
 	public void adopt(String nameOfPet) {
 		animals.remove(nameOfPet);
-
-		// add exemption if the key isn't present.
 	}
 
 	public void killPet() {
@@ -78,24 +76,28 @@ public class VirtualPetShelter {
 			}
 			if (checkToKill.getThirstLevel() >= 100) {
 				animals.remove(checkToKill.getNameOfPet());
-				System.out.println("You have let " + checkToKill.getNameOfPet() + " die of thirst! Be a better Lair caretaker!");
+				System.out.println(
+						"You have let " + checkToKill.getNameOfPet() + " die of thirst! Be a better Lair caretaker!");
 			}
 			if (checkToKill.getHungerLevel() >= 100) {
 				animals.remove(checkToKill.getNameOfPet());
-				System.out.println(
-						checkToKill.getNameOfPet() + " has died because you let it starve to death. Do a better job at The Lair.");
+				System.out.println(checkToKill.getNameOfPet()
+						+ " has died because you let it starve to death. Do a better job at The Lair.");
 			}
-			if(checkToKill.getBoredomLevel() >= 100) {
+			if (checkToKill.getBoredomLevel() >= 100) {
 				animals.remove(checkToKill.getNameOfPet());
-				System.out.println(
-						checkToKill.getNameOfPet() + " was literally bored to death.  Don't forget to take your pets on journeys!");
+				System.out.println(checkToKill.getNameOfPet()
+						+ " was literally bored to death.  Don't forget to take your pets on journeys!");
 
 			}
 			if (animals.isEmpty()) {
-				System.out.println("You have killed all of the creatures at The Lair.  You have been banished.  Goodbye.");
+				System.out.println(
+						"You have killed all of the creatures at The Lair.  You have been banished.  Goodbye.");
 				System.exit(0);
-			
-		}else {}}
+
+			} else {
+			}
+		}
 	}
 
 	public void returnStatusOfAll() {

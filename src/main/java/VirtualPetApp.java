@@ -17,6 +17,7 @@ class VirtualPetApp {
 		VirtualPet pet3 = new VirtualPet("Mister", "Griffen");
 		VirtualPet pet4 = new VirtualPet("Chubs", "Phoenix");
 		VirtualPet pet5 = new VirtualPet("Dozer", "Manticore");
+
 		shelterApp.add(pet1.getNameOfPet(), pet1);
 		shelterApp.add(pet2.getNameOfPet(), pet2);
 		shelterApp.add(pet3.getNameOfPet(), pet3);
@@ -41,9 +42,9 @@ class VirtualPetApp {
 			System.out.println("Type 2 to let the creatures drink from the pool of Elven tears.");
 			System.out.println("Type 3 to release the magic building inside these mighty creatures.");
 			System.out.println("Type 4 to take one creature out for a short journey.");
-			System.out.println("Type 5 to adopt a pet out to its new castle.");
+			System.out.println("Type 5 to permanently send a creature to its new castlelands.");
 			System.out.println("Type 6 to admit a new creature you have found in need of care.");
-			System.out.println("Type 7 to check the status on all creatures.");
+			System.out.println("Type 7 to check the status on all creatures at The Lair.");
 			System.out.println("Type 8 to quit the game.");
 			String optionEntered = input.nextLine();
 
@@ -73,10 +74,10 @@ class VirtualPetApp {
 				System.out.println("Which creature would you like to send to a far away land?");
 				String nameOfPetToAdopt = input.nextLine();
 				if (!(shelterApp.nameOfPet.contains(nameOfPetToAdopt))) {
-					System.out.println("Sorry, that creature must already be out on a journey with its new mates!");
+					System.out.println("Sorry, that creature must already be out on its journey to its new castleland!");
 				} else {
 					shelterApp.adopt(nameOfPetToAdopt);
-					System.out.println(nameOfPetToAdopt + " is off onto its next journey!");
+					System.out.println(nameOfPetToAdopt + " is off onto its journey to its new lands!");
 				}
 				break;
 			case "6":

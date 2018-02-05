@@ -22,10 +22,11 @@ public class VirtualPetShelterTest {
 		assertThat(typeOfPet, is("Cat"));
 	}
 
-	@Test
+	@Test // Tested values by setting all original values at "50". Once testing was
+			// successful, starting values were changed to random.
 	public void shouldFeedAll() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet shelterApp = new VirtualPet("", "", 5, 0, 0, 0); // hungerLevel is 1st int value.
+		VirtualPet shelterApp = new VirtualPet("", "", 5, 0, 0, 0);
 		underTest.feedAll();
 		int hungerLevel = shelterApp.getHungerLevel();
 		assertThat(hungerLevel, is(5));
