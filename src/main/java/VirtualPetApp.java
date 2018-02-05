@@ -24,14 +24,6 @@ class VirtualPetApp {
 		shelterApp.add(pet5.getNameOfPet(), pet5);
 
 		boolean gameRunning = true;
-		
-		
-		// System.out.println(pet1.getHungerLevel());
-
-		// System.out.println("The current animals are: " + shelterApp.nameOfPet);
-
-		// System.out.println(shelterApp.nameOfPet);
-		// System.out.println(shelterApp.animals());
 
 		System.out.println(
 				"Welcome to The Lair!\n\nSometimes creatures become banished from their castle homes and cannot find suitable cave dwellings. \nHere at The Lair we ask that you help take care of your fellow creatures.");
@@ -39,33 +31,35 @@ class VirtualPetApp {
 				"Every time you interact with our creatures, their needs increase in other areas.\nAlso, if you neglect any of their needs for too long, they may die.  Don't kill the creatures.");
 
 		do {
+			shelterApp.tickAll();
+			shelterApp.killPet();
 
-			System.out.println("\n\nHere are the current cave creatures of The Lair and their current condition:\n");
+			System.out.println("\nHere are the current cave creatures of The Lair and their current condition:\n");
 			shelterApp.returnStatusOfAll();
-			System.out.println(
-					"\nRemember that if you take care of the needs in one area, conditions of other needs may change.\nSelect an option below:");
+			System.out.println("\n\nSelect an option below:\n");
 			System.out.println("Type 1 to feed all of the creatures some tasty little critters.");
 			System.out.println("Type 2 to let the creatures drink from the pool of Elven tears.");
-			System.out.println("Type 3 to release the fire igniting inside of the mighty creatures.");
+			System.out.println("Type 3 to release the magic building inside these mighty creatures.");
 			System.out.println("Type 4 to take one creature out for a short journey.");
 			System.out.println("Type 5 to adopt a pet out to its new castle.");
 			System.out.println("Type 6 to admit a new creature you have found in need of care.");
 			System.out.println("Type 7 to check the status on all creatures.");
 			System.out.println("Type 8 to quit the game.");
 			String optionEntered = input.nextLine();
-			shelterApp.tickAll();
 
 			switch (optionEntered) {
 			case "1":
 				shelterApp.feedAll();
-				System.out.println("Thank you for the critters. I will need the energy for future journeys!");
+				System.out
+						.println("Thank you for the delicious critters. We will need the energy for future journeys!");
 				break;
-			case "2": 
+			case "2":
 				shelterApp.waterAll();
 				System.out.println("Thank you as the elven tears help restore our magical powers.");
 			case "3":
 				shelterApp.fireAll();
-				System.out.println();
+				System.out.println(
+						"Thanks! We are only allowed to release our magic under supervision per The Lair contract.");
 				break;
 			case "4":
 				System.out.println("Please select a pet:" + shelterApp.nameOfPet);
@@ -73,13 +67,17 @@ class VirtualPetApp {
 				if (shelterApp.nameOfPet.contains(nameOfPetToPlay)) {
 					shelterApp.playWithOne(nameOfPetToPlay);
 				}
-				System.out.println("That creature does not reside here. Pick another name.");
+				System.out.println("Oops! " + nameOfPetToPlay + " cannot be found! Pick something else to do!");
 				break;
 			case "5":
 				System.out.println("Which creature would you like to send to a far away land?");
 				String nameOfPetToAdopt = input.nextLine();
-				shelterApp.adopt(nameOfPetToAdopt);
-				System.out.println(nameOfPetToAdopt + " is off onto its next journey!");
+				if (!(shelterApp.nameOfPet.contains(nameOfPetToAdopt))) {
+					System.out.println("Sorry, that creature must already be out on a journey with its new mates!");
+				} else {
+					shelterApp.adopt(nameOfPetToAdopt);
+					System.out.println(nameOfPetToAdopt + " is off onto its next journey!");
+				}
 				break;
 			case "6":
 				System.out.println("Thank you for finding a creature in need!");
