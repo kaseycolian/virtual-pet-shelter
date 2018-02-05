@@ -15,11 +15,14 @@ public class VirtualPetShelter {
 
 	public void addYourOwn(String name, String type) {
 		VirtualPet userAdded = new VirtualPet(name, type);
-		if (animals.containsKey(name)){
-			System.out.println("That animal name already exists!  Please pick out a new name.");}
-		else {
-		this.add(name, userAdded);
-	}}
+		if (animals.containsKey(name)) {
+			System.out.println(
+					"\nThe Lair is too exclusive for duplicate names!  Please create a name that's not yet taken.");
+		} else {
+			this.add(name, userAdded);
+			System.out.println(name + " the " + type + " is now residing at The Lair!");
+		}
+	}
 
 	public Collection<VirtualPet> animalsss() {
 		Collection<VirtualPet> allPetInfo = animals.values();
@@ -43,7 +46,7 @@ public class VirtualPetShelter {
 			petToFire.fireOne();
 		}
 	}
-	
+
 	public void playWithOne(String nameOfpet) {
 		VirtualPet petToPlay = animals.get(nameOfpet);
 		petToPlay.playWithOne();
@@ -58,13 +61,14 @@ public class VirtualPetShelter {
 
 	public void adopt(String nameOfPet) {
 		animals.remove(nameOfPet);
-	// add exemption if the key isn't present.
+		// add exemption if the key isn't present.
 	}
 
 	public void returnStatusOfAll() {
 		for (VirtualPet petToDisplay : animals.values()) {
-			System.out.println(petToDisplay.getNameOfPet() + " the " + petToDisplay.getTypeOfPet() + " = \n\tHunger Level: " + petToDisplay.getHungerLevel()
-					+ " | Thirst Level: " + petToDisplay.getThirstLevel() + "\n\tFireLevel: " + petToDisplay.getFireLevel()
+			System.out.println(petToDisplay.getNameOfPet() + " the " + petToDisplay.getTypeOfPet()
+					+ " = \n\tHunger Level: " + petToDisplay.getHungerLevel() + " | Thirst Level: "
+					+ petToDisplay.getThirstLevel() + "\n\tFireLevel: " + petToDisplay.getFireLevel()
 					+ "    | Boredom Level: " + petToDisplay.getBoredomLevel());
 		}
 	}
