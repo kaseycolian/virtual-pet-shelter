@@ -3,7 +3,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class VirtualPet {
 
-	// instance variables
 	private String nameOfPet;
 	private String typeOfPet;
 	private int hungerLevel;
@@ -60,57 +59,46 @@ public class VirtualPet {
 	}
 
 	public void playWithOne() {
-		int amountToPlay = 6;
-		boredomLevel -= amountToPlay;
-		int hungrier = 3;
-		hungerLevel -= hungrier;
-		int thirstier = 3;
-		thirstLevel -= thirstier;
+		boredomLevel = boredomLevel - 10;
+		hungerLevel = hungerLevel + 3;
+		thirstLevel = thirstLevel + 3;
+		if (boredomLevel - 10 <= 10) {
+			boredomLevel = 0;
+		}
 	}
 
 	public void feedOne() {
-		int amountToFeed = 10;
-		hungerLevel = -amountToFeed;
-		int thirstier = 3;
-		thirstLevel = -thirstier;
-		int fierier = 3;
-		fireLevel = -fierier;
+		hungerLevel = hungerLevel - 10;
+		thirstLevel = thirstLevel + 3;
+		fireLevel = fireLevel + 3;
+		if (hungerLevel - 10 <= 0) {
+			hungerLevel = 0;
+		}
+	}
+
+	public void waterOne() {
+		thirstLevel = thirstLevel - 10;
+		hungerLevel = hungerLevel + 3;
+		fireLevel = fireLevel + 3;
+		if (thirstLevel - 10 <= 0) {
+			thirstLevel = 0;
+		}
+	}
+
+	public void fireOne() {
+		fireLevel = fireLevel - 10;
+		hungerLevel = hungerLevel + 3;
+		thirstLevel = thirstLevel + 3;
+		if (fireLevel - 10 <= 0) {
+			fireLevel = 0;
+		}
 	}
 
 	public void tickEffectOne() {
-		int amountToFeed = 3;
-		hungerLevel = +3;
-		int thirstier = 3;
-		thirstLevel = -thirstier;
-		int fierier = 3;
-		fireLevel = +fierier;
-		int bored = 3;
-		boredomLevel = +3;
+		hungerLevel = hungerLevel + 3;
+		thirstLevel = thirstLevel + 3;
+		fireLevel = fireLevel + 3;
+		boredomLevel = boredomLevel + 3;
 
 	}
-
-	public void setNameOfPet(String nameOfPet) {
-		this.nameOfPet = nameOfPet;
-	}
-
-	public void setTypeOfPet(String typeOfPet) {
-		this.typeOfPet = typeOfPet;
-	}
-
-	public void setHungerLevel(int hungerLevel) {
-		this.hungerLevel = hungerLevel;
-	}
-
-	public void setThirstLevel(int thirstLevel) {
-		this.thirstLevel = thirstLevel;
-	}
-
-	public void setFireLevel(int fireLevel) {
-		this.fireLevel = fireLevel;
-	}
-
-	public void setBoredomLevel(int boredomLevel) {
-		this.boredomLevel = boredomLevel;
-	}
-
 }
