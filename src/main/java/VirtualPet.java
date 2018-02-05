@@ -69,30 +69,48 @@ public class VirtualPet {
 	}
 
 	public void feedOne() {
-		int amountToFeed = 5;
+		int amountToFeed = 10;
 		hungerLevel = -amountToFeed;
-		int thirstier = 2;
+		int thirstier = 3;
 		thirstLevel = -thirstier;
 		int fierier = 3;
 		fireLevel = -fierier;
 	}
+
 	public void tickEffectOne() {
 		int amountToFeed = 3;
-		hungerLevel =+3;
+		hungerLevel = +3;
 		int thirstier = 3;
 		thirstLevel = -thirstier;
 		int fierier = 3;
 		fireLevel = +fierier;
 		int bored = 3;
-		boredomLevel =+3;
-		
+		boredomLevel = +3;
+
 	}
 
-	// @Override
-	// public String toString() {
-	// return nameOfPet + " the " + typeOfPet + " currently is, hunger: " +
-	// hungerLevel + " thirst: " + thirstLevel
-	// + " fire: " + fireLevel + " boredom: " + boredomLevel;
-	// }
+	public void setNameOfPet(String nameOfPet) {
+		this.nameOfPet = nameOfPet;
+	}
+
+	public void setTypeOfPet(String typeOfPet) {
+		this.typeOfPet = typeOfPet;
+	}
+
+	public void setHungerLevel(int hungerLevel) {
+		this.hungerLevel = hungerLevel;
+	}
+
+	public void setThirstLevel(int thirstLevel) {
+		this.thirstLevel = thirstLevel;
+	}
+
+	public void setFireLevel(int fireLevel) {
+		this.fireLevel = fireLevel;
+	}
+
+	public void setBoredomLevel(int boredomLevel) {
+		this.boredomLevel = boredomLevel;
+	}
 
 }
