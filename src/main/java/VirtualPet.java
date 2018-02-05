@@ -39,7 +39,7 @@ public class VirtualPet {
 		return nameOfPet;
 	}
 
-	public String gettypeOfPet() {
+	public String getTypeOfPet() {
 		return typeOfPet;
 	}
 
